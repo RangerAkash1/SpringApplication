@@ -24,4 +24,9 @@ public class EmployeeController {
         public List<Employee> getAllEmployees() {
                 return employeeRepository.findAll();
         }
+        @GetMapping("employees/search")
+        public List<Employee> searchEmployeesByName(@RequestParam String name) {
+                return employeeRepository.findByNameContaining(name);
+        }
+        
 }
