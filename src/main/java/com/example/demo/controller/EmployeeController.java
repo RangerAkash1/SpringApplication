@@ -28,5 +28,15 @@ public class EmployeeController {
         public List<Employee> searchEmployeesByName(@RequestParam String name) {
                 return employeeRepository.findByNameContaining(name);
         }
+
+        @GetMapping("employees/active")
+        public List<Employee> getActiveEmployees() {
+                return employeeRepository.findByActiveTrue();
+        }
+
+        @GetMapping("path")
+        public String getMethodName(@RequestParam String param) {
+            return new String();
+        }
         
 }
